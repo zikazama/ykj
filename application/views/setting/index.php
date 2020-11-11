@@ -11,17 +11,7 @@
             <div data-page="form" class="page">
                 <div class="page-content">
 
-                    <div class="navbar navbar--fixed navbar--fixed-top navbar--bg">
-                        <div class="navbar__col navbar__col--icon navbar__col--icon-left">
-                            <a href="#" data-panel="left" class="open-panel"><img src="<?= base_url() ?>assets/images/icons/white/menu.png" alt="" title="" /></a>
-                        </div>
-                        <div class="navbar__col navbar__col--title navbar__col--title-centered">
-                            <a href="<?= base_url() ?>">Yuk Kita Jajan</a>
-                        </div>
-                        <div class="navbar__col navbar__col--icon navbar__col--icon-right">
-                            <a href="#" data-panel="right" class="open-panel"><img src="<?= base_url() ?>assets/images/icons/white/user.png" alt="" title="" /></a>
-                        </div>
-                    </div>
+                   <?php $this->load->view('template/header') ?>
 
                     <div id="pages_maincontent">
 
@@ -35,24 +25,29 @@
                         <div class="page_single layout_fullwidth_padding">
 
                             <div class="contactform">
-                                <form class="" id="CustomForm" method="post" action="">
+                                <form class="" id="CustomForm" method="post" action="<?= base_url('setting/aksi_ubah_akun') ?>" enctype="multipart/form-data">
                                     <div class="form_row">
                                         <label>Nama:</label>
-                                        <input type="text" name="nama" value="" class="form_input" />
+                                        <input type="text" name="nama" value="<?= $user['nama'] ?>" class="form_input" />
                                     </div>
 
                                     <div class="form_row">
                                         <label>Email:</label>
-                                        <input type="text" name="email" value="" class="form_input required email" />
+                                        <input type="text" name="email" value="<?= $user['email'] ?>" class="form_input required email" />
                                     </div>
 
                                     <div class="form_row">
-                                        <div style="margin:auto"><img style="margin: auto;" src="<?= base_url() ?>assets/images/avatar3.jpg" alt="" title="" /></div>
-                                        <label>Foto:</label>
-                                        <input type="file" name="foto" value="" class="form_input required email" />
+                                        <label>Tentang Saya:</label>
+                                        <input type="text" name="tentang" value="<?= $user['tentang'] ?>" class="form_input required email" />
                                     </div>
 
-                                    <input type="submit" name="submit" class="form_submit" id="submit" value="Send" />
+                                    <div class="form_row">
+                                        <div style="margin:auto"><img style="margin: auto;" src="<?= $user['foto'] ? base_url().'uploads/profiles/'.$user['foto'] : base_url().'assets/images/avatar3.jpg' ?>" alt="" title="" /></div>
+                                        <label>Foto:</label>
+                                        <input type="file" name="foto" value="" class="form_input required foto" />
+                                    </div>
+
+                                    <input type="submit" name="submit" class="form_submit" id="submit" value="Perbarui Akun" />
                                 </form>
                             </div>
 

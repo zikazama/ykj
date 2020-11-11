@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/swiper.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
+   
 </head>
 
 <body id="mobile_wrap">

@@ -36,9 +36,9 @@
 
 								<div class="slider-caption">
 
-									<h2 data-swiper-parallax="-100%">Mobile UI KIT</h2>
-									<p data-swiper-parallax="-30%">Design and create, and build the most wonderful place in the world. But it takes people to make the dream a reality.</p>
-									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">READ MORE</a>
+									<h2 data-swiper-parallax="-100%">Apa itu Yuk Kita Jajan ?</h2>
+									<p data-swiper-parallax="-30%">Yuk Kita Jajan adalah platform untuk membagikan info makanan khususnya jajanan dan pedagang kaki lima. </p>
+									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
 								</div>
 							</div>
 
@@ -46,9 +46,9 @@
 
 								<div class="slider-caption">
 
-									<h2 data-swiper-parallax="-100%" class="title--white">Multipurpose</h2>
-									<p data-swiper-parallax="-30%" class="text--white">You can design and create, and build the most wonderful place in the world. But it takes people to make the dream a reality.</p>
-									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">READ MORE</a>
+									<h2 data-swiper-parallax="-100%" class="title--white">Upload dan Bagikan Jajananmu Hari Ini dan Dukung UMKM</h2>
+									<p data-swiper-parallax="-30%" class="text--white">Dengan membagikan jajanan yang kamu beli hari ini kamu akan mendapatkan point dan sudah mendukung UMKM.</p>
+									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
 								</div>
 
 							</div>
@@ -56,9 +56,9 @@
 
 								<div class="slider-caption">
 
-									<h2 data-swiper-parallax="-100%" class="title--white">Web &amp; Native</h2>
-									<p data-swiper-parallax="-30%" class="text--white">You can design and create, and build the most wonderful place in the world. But it takes people to make the dream a reality.</p>
-									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">READ MORE</a>
+									<h2 data-swiper-parallax="-100%" class="title--white">Bagaimana Cara Membagikan Jajanan ?</h2>
+									<p data-swiper-parallax="-30%" class="text--white">Untuk mengetahui caranya silahkan klik lebih lanjut.</p>
+									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
 								</div>
 
 							</div>
@@ -74,17 +74,12 @@
 							<div class="swiper-slide toolbar-icon">
 								<a href="#" data-panel="right" class="open-panel"><img src="<?= base_url() ?>assets/images/icons/blue/user.png" alt="" title="" /></a>
 								<a href="shop.html"><img src="<?= base_url() ?>assets/images/icons/blue/shop.png" alt="" title="" /></a>
+								<a href="features.html"><img src="<?= base_url() ?>assets/images/icons/blue/features.png" alt="" title="" /></a>
 								<a href="#" data-popup=".popup-social" class="open-popup"><img src="<?= base_url() ?>assets/images/icons/blue/twitter.png" alt="" title="" /></a>
 								<a href="photos.html"><img src="<?= base_url() ?>assets/images/icons/blue/photos.png" alt="" title="" /></a>
-								<a href="contact.html"><img src="<?= base_url() ?>assets/images/icons/blue/contact.png" alt="" title="" /></a>
+				
 							</div>
-							<div class="swiper-slide toolbar-icon">
-								<a href="features.html"><img src="<?= base_url() ?>assets/images/icons/blue/features.png" alt="" title="" /></a>
-								<a href="music.html"><img src="<?= base_url() ?>assets/images/icons/blue/music.png" alt="" title="" /></a>
-								<a href="#" data-popup=".popup-login" class="open-popup"><img src="<?= base_url() ?>assets/images/icons/blue/lock.png" alt="" title="" /></a>
-								<a href="videos.html"><img src="<?= base_url() ?>assets/images/icons/blue/video.png" alt="" title="" /></a>
-								<a href="tel:12345678"><img src="<?= base_url() ?>assets/images/icons/blue/phone.png" alt="" title="" /></a>
-							</div>
+							
 
 						</div>
 					</div>
