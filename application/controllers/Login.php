@@ -6,10 +6,18 @@ class Login extends CI_Controller {
 	public function __construct(){
         parent::__construct();
         $this->load->model('user_m');
-    }
+	}
+
+	private function cek_login(){
+		$sesi = $this->session->userdata('nama');
+		if($sesi != null){
+			redirect(base_url('home'));
+		}
+	}
 	
 	public function index()
 	{
+		$this->cek_login();
         $data = array(
             'konten' => 'login/index'
         );
@@ -24,7 +32,8 @@ class Login extends CI_Controller {
 			'email' => $email,
 			'password' => $password
 		));
-
+		// var_dump($cek->num_rows);
+		// die();
 		if($cek->num_rows() > 0){
 			$data_login = $cek->row_array();
 			unset($data_login['password']);
@@ -35,6 +44,11 @@ class Login extends CI_Controller {
 			redirect(base_url('login'));
 		}
 
+	}
+
+	public function aksi_logout(){
+		$this->session->sess_destroy();
+		redirect(base_url('login'));
 	}
 	
 }

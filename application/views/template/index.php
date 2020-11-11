@@ -75,7 +75,7 @@
                 <li><a href="http://www.linkedin.com/"><img src="<?= base_url() ?>assets/images/icons/black/linkedin.png" alt="" title="" /><span>LINKEDIN</span></a></li>
                 <li><a href="http://www.pinterest.com/"><img src="<?= base_url() ?>assets/images/icons/black/pinterest.png" alt="" title="" /><span>PINTEREST</span></a></li>
             </ul>
-            <div class="close_popup_button"><a href="#" class="close-popup" data-popup=".popup-social"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+            <div class="close_popup_button"><a href="#" class="close-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/black/menu_close.png" alt="" title="" /></a></div>
         </div>
     </div>
 
