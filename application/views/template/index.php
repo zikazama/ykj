@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="<?= base_url() ?>assets/images/apple-touch-icon.png" />
     <link rel="apple-touch-startup-image" href="<?= base_url() ?>assets/images/apple-touch-startup-image-640x920.png">
-    <title>YKJ</title>
+    <title>YUKIJA</title>
     <link rel="shortcut icon" href="<?= base_url() ?>assets/icon.png">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/swiper.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/style.css">
