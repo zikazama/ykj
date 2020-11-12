@@ -21,8 +21,8 @@
 
                             <ul class="features_list_detailed">
 
-                                <?php foreach($user as $data){ 
-                                    $no = 1;
+                                <?php $no = 1;foreach($user as $data){ 
+                                    
                                     ?>
                                 <li>
                                     <div class="feat_small_icon"><img src="<?= $data['foto'] ? base_url().'uploads/profiles/'.$data['foto'] : base_url().'assets/images/avatar3.jpg' ?>" alt="" title="" /></div>

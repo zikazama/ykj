@@ -73,7 +73,7 @@
 						<div class="swiper-wrapper">
 							<div class="swiper-slide toolbar-icon">
 								<a href="#" data-panel="right" class="open-panel"><img src="<?= base_url() ?>assets/images/icons/blue/user.png" alt="" title="" /></a>
-								<a href="<?= base_url('jajan') ?>"><img src="<?= base_url() ?>assets/images/icons/blue/shop.png" alt="" title="" /></a>
+								<a href="<?= base_url('jajan/direct') ?>"><img src="<?= base_url() ?>assets/images/icons/blue/shop.png" alt="" title="" /></a>
 								<a href="<?= base_url('jajan/posting') ?>"><img src="<?= base_url() ?>assets/images/icons/blue/features.png" alt="" title="" /></a>
 								<a href="#" data-popup=".popup-social" class="open-popup"><img src="<?= base_url() ?>assets/images/icons/blue/twitter.png" alt="" title="" /></a>
 								<a href="<?= base_url('album') ?>"><img src="<?= base_url() ?>assets/images/icons/blue/photos.png" alt="" title="" /></a>

@@ -18,13 +18,20 @@
                         <h2 class="page_title">Cari Jajanan Sekitar</h2>
                         <div class="page_single layout_fullwidth_padding">
 
-                            <a href="<?= base_url('jajan/upload') ?>">
+                            <?php if ($this->session->flashdata('pesan_sukses') != null) { ?>
+                                <h6 style="text-align: center;color:green"><?= $this->session->flashdata('pesan_sukses') ?></h6>
+                            <?php } ?>
+                            <?php if ($this->session->flashdata('pesan_gagal') != null) { ?>
+                                <h6 style="text-align: center;color:red"><?= $this->session->flashdata('pesan_gagal') ?></h6>
+                            <?php } ?>
+
+                            <a href="<?= base_url('jajan/posting') ?>">
                                 <div id="loadMore" class="btn btn--full">Posting Jajanan</div>
                             </a>
 
                             <hr>
                             <div class="contactform">
-                                <form class="" id="CustomForm" method="post" action="#">
+                                <form class="" id="CustomForm" method="post" action="<?= base_url('jajan/cari/'.$this->uri->segment(3).'/'.$this->uri->segment(4)) ?>">
                                     <div class="form_row">
                                         <label>Cari Jajanan:</label>
                                         <input type="text" name="keyword_jajanan" value="" class="form_input" />
@@ -33,124 +40,39 @@
                                 </form>
                             </div>
 
-                            <ul class="posts">
+                            <ul class="posts" id="tempatPost">
+                                
+                            <?php if($postingan != null) { ?>
+                            <?php foreach($postingan as $data) { ?>
                                 <li class="swipeout">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide swipeout-content item-content">
                                             <div class="post_entry">
-                                                <div class="post_thumb"><img src="<?= base_url() ?>assets/images/photos/photo8.jpg" alt="" title="" /></div>
+                                                <div class="post_thumb"><img src="<?= base_url() ?>uploads/jajanan/<?= $data['foto'] ?>" alt="" title="" /></div>
                                                 <div class="post_details">
-                                                    <div class="post_category"><a href="blog-single.html">DESIGN</a></div>
-                                                    <h2><a href="blog-single.html">Design is not just what it looks like and feels like.</a></h2>
+                                                    <div class="post_category"><a href="blog-single.html"><?= $data['judul'] ?></a></div>
+                                                    <h2><a href="blog-single.html"><?= $data['caption'] ?></a></h2>
                                                 </div>
                                                 <div class="post_swipe"><img src="<?= base_url() ?>assets/images/swipe_more.png" alt="" title="" /></div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide swipeout-actions-right">
-                                            <a href="blog-single.html" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
+                                            <a href="<?= base_url('jajan/komentar/'.$this->uri->segment(3).'/'.$this->uri->segment(4).'/'.$data['id_post']) ?>" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
                                             <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
                                             <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="swipeout">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide swipeout-content item-content">
-                                            <div class="post_entry">
-                                                <div class="post_thumb"><img src="<?= base_url() ?>assets/images/photos/photo2.jpg" alt="" title="" /></div>
-                                                <div class="post_details">
-                                                    <div class="post_category"><a href="blog-single.html">NEWS</a></div>
-                                                    <h2><a href="blog-single.html">Fashion fades, only style remains the same.</a></h2>
-                                                </div>
-                                                <div class="post_swipe"><img src="<?= base_url() ?>assets/images/swipe_more.png" alt="" title="" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swipeout-actions-right">
-                                            <a href="blog-single.html" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swipeout">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide swipeout-content item-content">
-                                            <div class="post_entry">
-                                                <div class="post_thumb"><img src="<?= base_url() ?>assets/images/photos/photo1.jpg" alt="" title="" /></div>
-                                                <div class="post_details">
-                                                    <div class="post_category"><a href="blog-single.html">CODING</a></div>
-                                                    <h2><a href="blog-single.html">Good design is making something memorable.</a></h2>
-                                                </div>
-                                                <div class="post_swipe"><img src="<?= base_url() ?>assets/images/swipe_more.png" alt="" title="" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swipeout-actions-right">
-                                            <a href="blog-single.html" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swipeout">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide swipeout-content item-content">
-                                            <div class="post_entry">
-                                                <div class="post_thumb"><img src="<?= base_url() ?>assets/images/photos/photo4.jpg" alt="" title="" /></div>
-                                                <div class="post_details">
-                                                    <div class="post_category"><a href="blog-single.html">UI/UX LAYOUTS</a></div>
-                                                    <h2><a href="blog-single.html">Design is not just what it looks like and feels like.</a></h2>
-                                                </div>
-                                                <div class="post_swipe"><img src="<?= base_url() ?>assets/images/swipe_more.png" alt="" title="" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swipeout-actions-right">
-                                            <a href="blog-single.html" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swipeout">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide swipeout-content item-content">
-                                            <div class="post_entry">
-                                                <div class="post_thumb"><img src="<?= base_url() ?>assets/images/photos/photo6.jpg" alt="" title="" /></div>
-                                                <div class="post_details">
-                                                    <div class="post_category"><a href="blog-single.html">DESIGN</a></div>
-                                                    <h2><a href="blog-single.html">Design is not just what it looks like and feels like.</a></h2>
-                                                </div>
-                                                <div class="post_swipe"><img src="<?= base_url() ?>assets/images/swipe_more.png" alt="" title="" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swipeout-actions-right">
-                                            <a href="blog-single.html" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="swipeout">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide swipeout-content item-content">
-                                            <div class="post_entry">
-                                                <div class="post_thumb"><img src="<?= base_url() ?>assets/images/photos/photo5.jpg" alt="" title="" /></div>
-                                                <div class="post_details">
-                                                    <div class="post_category"><a href="blog-single.html">NEWS</a></div>
-                                                    <h2><a href="blog-single.html">Fashion fades, only style remains the same.</a></h2>
-                                                </div>
-                                                <div class="post_swipe"><img src="<?= base_url() ?>assets/images/swipe_more.png" alt="" title="" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swipeout-actions-right">
-                                            <a href="blog-single.html" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
-                                        </div>
-                                    </div>
-                                </li>
+                            <?php } ?>
+                            <?php } else  {?>
+                                <div style="align-content: center;">
+                                    <h3>Hari ini tidak ada yang jajan disekitarmu</h3>
+                                </div>
+                            <?php } ?>
+                                
                             </ul>
 
-                            <div id="loadMore" class="btn btn--full">LOAD MORE</div>
+                            <!-- <div id="loadMore" class="btn btn--full">LOAD MORE</div> -->
                             <div id="showLess">END</div>
 
 

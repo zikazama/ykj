@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Nov 2020 pada 19.42
+-- Waktu pembuatan: 12 Nov 2020 pada 18.13
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -49,6 +49,13 @@ CREATE TABLE `komentar` (
   `isi_komentar` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `komentar`
+--
+
+INSERT INTO `komentar` (`id_komentar`, `id_post`, `id_user`, `isi_komentar`, `created_at`) VALUES
+(1, 1, 1, 'bagus banget', '2020-11-12 16:26:46');
 
 -- --------------------------------------------------------
 
@@ -101,11 +108,19 @@ CREATE TABLE `post` (
   `id_post` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `foto` varchar(100) NOT NULL,
+  `judul` varchar(50) NOT NULL,
   `caption` varchar(100) NOT NULL,
   `latitude` double NOT NULL,
   `longitude` double NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `post`
+--
+
+INSERT INTO `post` (`id_post`, `id_user`, `foto`, `judul`, `caption`, `latitude`, `longitude`, `created_at`) VALUES
+(1, 1, 'e25484be7010cf6cc3676b9b97340ffc.png', 'stiker', 'jajan stiker', -1.8247355, 109.96970030000001, '2020-11-12 10:54:42');
 
 -- --------------------------------------------------------
 
@@ -130,7 +145,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `tentang`, `whatsapp`, `point`, `foto`, `created_at`) VALUES
-(1, 'Fauzi', 'fauzi190198@gmail.com', '010101', 'Founder of Yuk Kita Jajan', '2147483647', 0, '119ffbb19daef8bfe9c2e8aaac8e6e00.jpg', '2020-11-11 17:37:27');
+(1, 'Fauzi', 'fauzi190198@gmail.com', '010101', 'Founder of Yuk Kita Jajan', '2147483647', 2, '119ffbb19daef8bfe9c2e8aaac8e6e00.jpg', '2020-11-12 10:54:42');
 
 --
 -- Indexes for dumped tables
@@ -186,7 +201,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `level`
@@ -204,7 +219,7 @@ ALTER TABLE `notifikasi`
 -- AUTO_INCREMENT untuk tabel `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

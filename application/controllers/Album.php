@@ -26,7 +26,11 @@ class Album extends CI_Controller {
 		$user = $this->user_m->read_where(array(
 			'id_user' => $id_user
         ))->row_array();
+        $postingan = $this->post_m->read_where(array(
+            'id_user' => $id_user
+        ))->result_array();
 		$data = array(
+            'postingan' => $postingan,
             'user' => $user,
 			'konten' => 'album/index'
 		);
@@ -44,10 +48,12 @@ class Album extends CI_Controller {
         if($user->num_rows() == 0 ){
             redirect(base_url('home'));
         }
-        $level = $this->level_m->tingkatan()->result_array();
-        $user = $user->row_array();
+        $postingan = $this->post_m->read_where(array(
+            'id_user' => $id_user
+        ))->result_array();
        
         $data = array(
+            'postingan' => $postingan,
 			'user' => $user,
             'konten' => 'album/index'
         );

@@ -35,11 +35,29 @@
                         <div class="page_single layout_fullwidth_padding">
 
                             <div class="contactform">
-                                <form class="" id="CustomForm" method="post" action="<?= base_url('jajan/aksi_upload') ?>">
+                                <form class="" id="CustomForm" method="post" action="<?= base_url('jajan/aksi_posting') ?>" enctype="multipart/form-data">
+
+                                    <!-- <div class="form_row" >
+                                        <div id="my_camera" style="align-content: center; margin:auto"></div>
+                                        <br />
+                                        <input type="button" class="btn btn--full" value="Ambil Foto" onClick="take_snapshot()">
+                                        <input type="hidden" name="image" class="image-tag">
+                                    </div>
+                                    <div class="form_row">
+                                        <div id="results" style="align-content: center; margin:auto">Your captured image will appear here...</div>
+                                    </div> -->
 
                                     <div class="form_row">
                                         <label>Foto Jajanan:</label>
                                         <input type="file" name="foto" value="" class="form_input required foto" />
+                                        <input type="hidden" name="latitude" id="latitude" value="" class="form_input required foto" />
+                                        <input type="hidden" name="longitude" id="longitude" value="" class="form_input required foto" />
+                                        <div id="info"></div>
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label>Judul:</label>
+                                        <input type="text" name="judul" value="" class="form_input" />
                                     </div>
 
                                     <div class="form_row">
@@ -48,13 +66,15 @@
                                     </div>
 
 
-                                    <input type="submit" name="submit" class="form_submit" id="submit" value="Posting Jajanan" />
+                                    <input type="submit" class="form_submit" id="submit" value="Posting Jajanan" />
                                 </form>
                             </div>
 
                             <hr>
 
-                            <a href="<?= base_url('jajan') ?>"><div id="loadMore" class="btn btn--full">Kembali Cari Jajanan</div> </a>
+                            <a href="<?= base_url('jajan/direct') ?>">
+                                <div id="loadMore" class="btn btn--full">Kembali Cari Jajanan</div>
+                            </a>
 
 
                         </div>

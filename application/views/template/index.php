@@ -84,6 +84,11 @@
     <script src="<?= base_url() ?>assets/js/simple-lightbox.js"></script>
     <!-- <script src="<?= base_url() ?>assets/js/swiper.custom.js"></script> -->
     <script src="<?= base_url() ?>assets/js/jquery.custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    
+    <?php if(isset($js)) { 
+        $this->load->view($js);
+     } ?>
 </body>
 
 </html>

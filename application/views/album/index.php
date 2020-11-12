@@ -29,21 +29,13 @@
                 <label class="tablabel tablabel--13" for="tabone"><?= $user['nama'] ?></label>
                 <div class="tab">
                   <ul id="photoslist" class="photo_gallery_13">
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo1.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo1.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo2.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo2.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo3.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo3.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo4.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo4.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo5.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo5.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo6.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo6.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo7.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo7.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo8.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo8.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo9.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo9.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo10.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo10.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo11.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo11.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo12.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo12.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo13.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo13.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo14.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo14.jpg" alt="image" /></a></li>
-                    <li><a href="<?= base_url() ?>assets/images/photos/photo15.jpg" title="Photo title"><img src="<?= base_url() ?>assets/images/photos/photo15.jpg" alt="image" /></a></li>
+                    <?php if($postingan != null) { ?>
+                    <?php foreach($postingan as $data) { ?>
+                    <li><a href="<?= base_url() ?>uploads/jajanan/<?= $data['foto'] ?>" title="<?= $data['judul'] ?>"><img src="<?= base_url() ?>uploads/jajanan/<?= $data['foto'] ?>" alt="image" /></a></li>
+                    <?php } ?>
+                    <?php } else { ?>
+                      <li>Belum ada postingan</li>
+                    <?php } ?>
                     <div class="clearleft"></div>
                   </ul>
                 </div>
