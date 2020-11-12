@@ -38,7 +38,7 @@
 
 									<h2 data-swiper-parallax="-100%">Apa itu Yuk Kita Jajan ?</h2>
 									<p data-swiper-parallax="-30%">Yuk Kita Jajan adalah platform untuk membagikan info makanan khususnya jajanan dan pedagang kaki lima. </p>
-									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
+									<a href="<?= base_url('page/tentang') ?>" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
 								</div>
 							</div>
 
@@ -48,7 +48,7 @@
 
 									<h2 data-swiper-parallax="-100%" class="title--white">Upload dan Bagikan Jajananmu Hari Ini dan Dukung UMKM</h2>
 									<p data-swiper-parallax="-30%" class="text--white">Dengan membagikan jajanan yang kamu beli hari ini kamu akan mendapatkan point dan sudah mendukung UMKM.</p>
-									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
+									<a href="<?= base_url('page/dukung') ?>" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
 								</div>
 
 							</div>
@@ -58,7 +58,7 @@
 
 									<h2 data-swiper-parallax="-100%" class="title--white">Bagaimana Cara Membagikan Jajanan ?</h2>
 									<p data-swiper-parallax="-30%" class="text--white">Untuk mengetahui caranya silahkan klik lebih lanjut.</p>
-									<a href="about.html" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
+									<a href="<?= base_url('page/bantuan') ?>" class="slider-caption__more" data-swiper-parallax="-60%">Lebih Lanjut</a>
 								</div>
 
 							</div>
@@ -73,10 +73,10 @@
 						<div class="swiper-wrapper">
 							<div class="swiper-slide toolbar-icon">
 								<a href="#" data-panel="right" class="open-panel"><img src="<?= base_url() ?>assets/images/icons/blue/user.png" alt="" title="" /></a>
-								<a href="shop.html"><img src="<?= base_url() ?>assets/images/icons/blue/shop.png" alt="" title="" /></a>
-								<a href="features.html"><img src="<?= base_url() ?>assets/images/icons/blue/features.png" alt="" title="" /></a>
+								<a href="<?= base_url('jajan') ?>"><img src="<?= base_url() ?>assets/images/icons/blue/shop.png" alt="" title="" /></a>
+								<a href="<?= base_url('jajan/posting') ?>"><img src="<?= base_url() ?>assets/images/icons/blue/features.png" alt="" title="" /></a>
 								<a href="#" data-popup=".popup-social" class="open-popup"><img src="<?= base_url() ?>assets/images/icons/blue/twitter.png" alt="" title="" /></a>
-								<a href="photos.html"><img src="<?= base_url() ?>assets/images/icons/blue/photos.png" alt="" title="" /></a>
+								<a href="<?= base_url('album') ?>"><img src="<?= base_url() ?>assets/images/icons/blue/photos.png" alt="" title="" /></a>
 				
 							</div>
 							

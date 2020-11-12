@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="<?= base_url() ?>assets/images/apple-touch-icon.png" />
-    <link rel="apple-touch-startup-image" href="<?= base_url() ?>assets/images/apple-touch-startup-image-640x920.png">
+    <link rel="apple-touch-icon" href="<?= base_url() ?>assets/icon.png" />
+    <link rel="apple-touch-startup-image" href="<?= base_url() ?>icon.png">
     <title>YUKIJA</title>
     <link rel="shortcut icon" href="<?= base_url() ?>assets/icon.png">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/swiper.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/simplelightbox.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
    
@@ -66,15 +67,12 @@
     <!-- Social Icons Popup -->
     <div class="popup popup-social">
         <div class="content-block">
-            <h4>Social Share</h4>
-            <p>Share icons solution that allows you share and increase your social popularity.</p>
+            <h4>Bagikan</h4>
+            <p>Dukung UMKM kita dengan cara membagikan YUKIJA kepada teman-teman.</p>
             <ul class="social_share">
                 <li><a href="http://twitter.com/"><img src="<?= base_url() ?>assets/images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span></a></li>
                 <li><a href="http://www.facebook.com/"><img src="<?= base_url() ?>assets/images/icons/black/facebook.png" alt="" title="" /><span>FACEBOOK</span></a></li>
-                <li><a href="http://plus.google.com"><img src="<?= base_url() ?>assets/images/icons/black/gplus.png" alt="" title="" /><span>GOOGLE</span></a></li>
-                <li><a href="http://www.dribbble.com/"><img src="<?= base_url() ?>assets/images/icons/black/dribbble.png" alt="" title="" /><span>DRIBBBLE</span></a></li>
-                <li><a href="http://www.linkedin.com/"><img src="<?= base_url() ?>assets/images/icons/black/linkedin.png" alt="" title="" /><span>LINKEDIN</span></a></li>
-                <li><a href="http://www.pinterest.com/"><img src="<?= base_url() ?>assets/images/icons/black/pinterest.png" alt="" title="" /><span>PINTEREST</span></a></li>
+                <li><a href="http://plus.google.com"><img src="<?= base_url() ?>assets/images/icons/black/wa.png" alt="" title="" /><span>WHATSAPP</span></a></li>
             </ul>
             <div class="close_popup_button"><a href="#" class="close-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/black/menu_close.png" alt="" title="" /></a></div>
         </div>
@@ -83,7 +81,8 @@
     <script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
     <script src="<?= base_url() ?>assets/js/jquery.validate.min.js"></script>
     <script src="<?= base_url() ?>assets/js/swiper.min.js"></script>
-    <script src="<?= base_url() ?>assets/js/swiper.custom.js"></script>
+    <script src="<?= base_url() ?>assets/js/simple-lightbox.js"></script>
+    <!-- <script src="<?= base_url() ?>assets/js/swiper.custom.js"></script> -->
     <script src="<?= base_url() ?>assets/js/jquery.custom.js"></script>
 </body>
 
