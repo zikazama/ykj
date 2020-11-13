@@ -49,7 +49,7 @@
 
                                     <div class="form_row">
                                         <label>Foto Jajanan:</label>
-                                        <input type="file" name="foto" value="" class="form_input required foto" />
+                                        <input type="file" accept="image/x-png,image/gif,image/jpeg" name="foto" value="" class="form_input required foto" />
                                         <input type="hidden" name="latitude" id="latitude" value="" class="form_input required foto" />
                                         <input type="hidden" name="longitude" id="longitude" value="" class="form_input required foto" />
                                         <div id="info"></div>

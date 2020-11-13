@@ -20,6 +20,8 @@ class Jajan extends CI_Controller
 		$this->load->model('post_m');
 		$this->load->model('level_m');
 		$this->load->model('komentar_m');
+		$this->load->model('favorit_m');
+		$this->load->model('notifikasi_m');
 	}
 
 	public function direct()
@@ -34,7 +36,19 @@ class Jajan extends CI_Controller
 	{
 		$this->cek_login();
 		$tanggal = date('Y-m-d');
+		$id_user = $this->session->userdata('id_user');
 		$postingan = $this->post_m->terdekat($latitude, $longitude, $tanggal)->result_array();
+		foreach($postingan as $i => $data) {
+			$fav = $this->favorit_m->read_where(array(
+				'id_post' => $data['id_post'],
+				'id_user' => $id_user
+			))->num_rows();
+			if($fav > 0){
+				$postingan[$i]['like'] = 1;
+			} else {
+				$postingan[$i]['like'] = 0;
+			}
+		}
 		$data = array(
 			'konten' => 'jajan/index',
 			'postingan' => $postingan
@@ -122,10 +136,10 @@ class Jajan extends CI_Controller
 		if ($postingan == null) {
 			redirect(base_url('jajan/direct'));
 		}
-		$komentar = $this->komentar_m->read_full_where(array(
+		$komentar = $this->komentar_m->read_reverse_where(array(
 			'id_post' => $id_post
 		))->result_array();
-		$jumlah_komentar = $this->komentar_m->read_full_where(array(
+		$jumlah_komentar = $this->komentar_m->read_reverse_where(array(
 			'id_post' => $id_post
 		))->num_rows();
 		$data = array(
@@ -137,13 +151,45 @@ class Jajan extends CI_Controller
 		$this->load->view('template/index', $data);
 	}
 
-	public function aksi_komentar($latitude, $longitude, $id_post)
+	public function aksi_komentar($latitude, $longitude,$id_post)
 	{
 		$data['isi_komentar'] = $this->input->post('komentar');
 		$data['id_user'] = $this->session->userdata('id_user');
+		$id_user = $this->session->userdata('id_user');
+		$user = $this->user_m->read_where(array(
+			'id_user' => $id_user
+		))->row_array();
+		$postingan = $this->post_m->read_where(array(
+			'id_post' => $id_post
+		))->row_array();
+		if($postingan['id_user'] != $id_user){
+			$this->notifikasi_m->create(array(
+				'id_post' => $id_post,
+				'id_user' => $postingan['id_user'],
+				'isi_notifikasi' => "$user[nama] berkomentar $data[isi_komentar]"
+			));
+		}
 		$data['id_post'] = $id_post;
 		$this->komentar_m->create($data);
 		$this->session->set_flashdata('pesan_sukses', 'Komentar Berhasil Terkirim');
 		redirect(base_url("jajan/komentar/$latitude/$longitude/$id_post"));
+	}
+
+	public function like($id_post){
+		$id_user = $this->session->userdata('id_user');
+		$this->favorit_m->create(array(
+			'id_user' => $id_user,
+			'id_post' => $id_post
+		));
+		redirect(base_url('jajan/direct'));
+	}
+
+	public function dislike($id_post){
+		$id_user = $this->session->userdata('id_user');
+		$this->favorit_m->delete(array(
+			'id_user' => $id_user,
+			'id_post' => $id_post
+		));
+		redirect(base_url('jajan/direct'));
 	}
 }

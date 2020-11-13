@@ -29,7 +29,7 @@
                                     </div>
                                 </li>
 
-                                <li>
+                                <!-- <li>
                                     <div class="feat_small_icon"><img src="<?= base_url() ?>assets/images/icons/black/contact.png" alt="" title="" /></div>
                                     <div class="feat_small_details">
                                         <h4><a href="#">Email</a></h4>
@@ -43,7 +43,7 @@
                                         <h4><a href="tel:<?= $user['whatsapp'] ?>" class="external">Whatsapp</a></h4>
                                         <a href="tel:<?= $user['whatsapp'] ?>" class="external"><?= $user['whatsapp'] ?></a>
                                     </div>
-                                </li>
+                                </li> -->
 
                                 <li>
                                     <div class="feat_small_icon"><img src="<?= base_url() ?>assets/images/icons/black/tabs.png" alt="" title="" /></div>

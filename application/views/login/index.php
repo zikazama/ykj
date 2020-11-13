@@ -7,7 +7,7 @@
         <form id="LoginForm" action="<?= base_url('login/aksi_login') ?>" method="post">
             <input type="email" name="email" value="" class="form_input required" placeholder="Email" />
             <input type="password" name="password" value="" class="form_input required" placeholder="password" />
-            <div class="forgot_pass"><a href="#" data-popup=".popup-forgot" class="open-popup">Lupa Password?</a></div>
+            <!-- <div class="forgot_pass"><a href="#" data-popup=".popup-forgot" class="open-popup">Lupa Password?</a></div> -->
             <input type="submit" name="submit" class="form_submit" id="submit" value="MASUK" />
         </form>
         <div class="signup_bottom">

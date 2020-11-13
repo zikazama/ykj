@@ -15,7 +15,7 @@
 
                     <div id="pages_maincontent">
 
-                        <h2 class="page_title">Cari Jajanan Sekitar</h2>
+                        <h2 class="page_title">Jajanan Yang Disukai</h2>
                         <div class="page_single layout_fullwidth_padding">
 
                             <?php if ($this->session->flashdata('pesan_sukses') != null) { ?>
@@ -25,20 +25,6 @@
                                 <h6 style="text-align: center;color:red"><?= $this->session->flashdata('pesan_gagal') ?></h6>
                             <?php } ?>
 
-                            <a href="<?= base_url('jajan/posting') ?>">
-                                <div id="loadMore" class="btn btn--full">Posting Jajanan</div>
-                            </a>
-
-                            <hr>
-                            <div class="contactform">
-                                <form class="" id="CustomForm" method="post" action="<?= base_url('jajan/cari/'.$this->uri->segment(3).'/'.$this->uri->segment(4)) ?>">
-                                    <div class="form_row">
-                                        <label>Cari Jajanan:</label>
-                                        <input type="text" name="keyword_jajanan" value="" class="form_input" />
-                                    </div>
-                                    <input type="submit" name="submit" class="form_submit" id="submit" value="Cari" />
-                                </form>
-                            </div>
 
                             <ul class="posts" id="tempatPost">
                                 
@@ -48,7 +34,7 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide swipeout-content item-content">
                                             <div class="post_entry">
-                                                <div class="post_thumb"><img src="<?= base_url() ?>uploads/jajanan/<?= $data['foto'] ?>" alt="" title="" /></div>
+                                                <div class="post_thumb"><img src="<?= base_url() ?>uploads/jajanan/<?= $data['foto_jajanan'] ?>" alt="" title="" /></div>
                                                 <div class="post_details">
                                                     <div class="post_category"><a href="blog-single.html"><?= $data['judul'] ?></a></div>
                                                     <h2><a href="blog-single.html"><?= $data['caption'] ?></a></h2>
@@ -57,11 +43,11 @@
                                             </div>
                                         </div>
                                         <div class="swiper-slide swipeout-actions-right">
-                                            <a href="<?= base_url('jajan/komentar/'.$this->uri->segment(3).'/'.$this->uri->segment(4).'/'.$data['id_post']) ?>" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
+                                            <a href="<?= base_url('favorite/komentar/'.$data['id_post']) ?>" class="action1"><img src="<?= base_url() ?>assets/images/icons/white/message.png" alt="" title="" /></a>
                                             <?php if($data['like'] == 0) { ?>
-                                            <a href="<?= base_url('jajan/like/'.$data['id_post']) ?>"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
+                                            <a href="<?= base_url('favorite/like/'.$data['id_post']) ?>"><img src="<?= base_url() ?>assets/images/icons/white/like.png" alt="" title="" /></a>
                                             <?php } else if($data['like'] == 1) { ?>
-                                                <a href="<?= base_url('jajan/dislike/'.$data['id_post']) ?>"><img src="<?= base_url() ?>assets/images/icons/white/dislike.png" alt="" title="" /></a>
+                                                <a href="<?= base_url('favorite/dislike/'.$data['id_post']) ?>"><img src="<?= base_url() ?>assets/images/icons/white/dislike.png" alt="" title="" /></a>
                                             <?php } ?>
                                             <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
                                         </div>
@@ -70,7 +56,7 @@
                             <?php } ?>
                             <?php } else  {?>
                                 <div style="align-content: center;">
-                                    <h3>Hari ini tidak ada yang jajan disekitarmu</h3>
+                                    <h3>Anda belum menyukai jajanan satupun</h3>
                                 </div>
                             <?php } ?>
                                 

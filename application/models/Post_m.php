@@ -51,4 +51,21 @@ class Post_m extends Base_m {
         return $this->db->get();
     }
 
+    public function favorite($where){
+        $this->db->select("*, favorit.id_user as user_like, post.created_at as tanggal_post, post.foto as foto_jajanan");
+        $this->db->from($this->table);
+        $this->db->join('favorit','favorit.id_post = post.id_post');
+        $this->db->join('user','user.id_user = post.id_user');
+        $this->db->where($where);
+        return $this->db->get();
+    }
+
+    public function read_full_where($where){
+        $this->db->select("*, post.created_at as tanggal_post, post.foto as foto_jajanan");
+        $this->db->from($this->table);
+        $this->db->join('user','user.id_user = post.id_user');
+        $this->db->where($where);
+        return $this->db->get();
+    }
+
 }

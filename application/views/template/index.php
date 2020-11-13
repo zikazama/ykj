@@ -50,8 +50,8 @@
         <div class="content-block">
             <h4>LUPA PASSWORD</h4>
             <div class="loginform">
-                <form id="ForgotForm" method="post">
-                    <input type="text" name="Email" value="" class="form_input required" placeholder="email" />
+                <form id="ForgotForm" method="post" action="<?= base_url('login/aksi_lupa_password') ?>">
+                    <input type="text" name="email" value="" class="form_input required" placeholder="email" />
                     <input type="submit" name="submit" class="form_submit" id="submitforgot" value="RESEND PASSWORD" />
                 </form>
                 <div class="signup_bottom">

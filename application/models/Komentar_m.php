@@ -20,4 +20,13 @@ class Komentar_m extends Base_m {
         return $this->db->get();
     }
 
+    public function read_reverse_where($where){
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->join('user','user.id_user = komentar.id_user');
+        $this->db->where($where);
+        $this->db->order_by('id_komentar','DESC');
+        return $this->db->get();
+    }
+
 }

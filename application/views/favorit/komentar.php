@@ -15,7 +15,7 @@
 
                     <div id="pages_maincontent">
 
-                        <a href="<?= base_url('jajan/direct') ?>" class="backto"><img src="<?= base_url() ?>assets/images/icons/black/back.png" alt="" title="" /></a>
+                        <a href="<?= base_url('favorite') ?>" class="backto"><img src="<?= base_url() ?>assets/images/icons/black/back.png" alt="" title="" /></a>
                         <h2 class="blog_title"><?= $postingan['judul'] ?></h2>
 
                         <!-- Slider -->
@@ -38,18 +38,18 @@
                                 <span class="post_author"> <a href="#"> <?= $postingan['nama'] ?></a></span>
                                 <span class="post_comments"><a href="#"><?= $jumlah_komentar ?></a></span>
                             </div>
-                            
+
                             <iframe width="100%" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDLPKsfATfhZXgndiwLwxDsBy3V84R19tI
     &q=<?= $postingan['latitude'] ?>,<?= $postingan['longitude'] ?>" allowfullscreen>
                             </iframe>
                             <a href="https://maps.google.com/?q=<?= $postingan['latitude'] ?>,<?= $postingan['longitude'] ?>" class="btn btn--full open-popup">Tunjukan Tempat Di Maps</a>
+                            <?php if ($this->session->flashdata('pesan_sukses') != null) { ?>
+                                <h6 style="text-align: center;color:green"><?= $this->session->flashdata('pesan_sukses') ?></h6>
+                            <?php } ?>
                             <div class="tabs">
 
                                 <input type="radio" name="tabs" class="tabradio" id="tabtwo" checked="checked">
                                 <label class="tablabel tablabel--12" for="tabtwo">Komentar</label>
-                                <?php if ($this->session->flashdata('pesan_sukses') != null) { ?>
-                                    <h6 style="text-align: center;color:green"><?= $this->session->flashdata('pesan_sukses') ?></h6>
-                                <?php } ?>
                                 <div class="tab">
                                     <ul class="comments">
 
@@ -74,13 +74,13 @@
                                         <div class="clear"></div>
                                     </ul>
                                 </div>
-                               
+
                                 <br><br>
                                 <input type="radio" name="tabs" class="tabradio" id="tabone">
                                 <label class="tablabel tablabel--12" for="tabone">Beri Komentar</label>
                                 <div class="tab">
                                     <div class="contactform">
-                                        <form id="CommentForm" method="post" action="<?= base_url('jajan/aksi_komentar/' . $this->uri->segment(3) . '/' . $this->uri->segment(4) . '/' . $this->uri->segment(5)) ?>">
+                                        <form id="CommentForm" method="post" action="<?= base_url('favorite/aksi_komentar/' . $this->uri->segment(3)) ?>">
                                             <label>Komentar:</label>
                                             <textarea name="komentar" id="Comment" class="form_textarea" rows="" cols=""></textarea>
                                             <input type="submit" name="submit" class="form_submit" id="submit" value="Kirim Komentar" />

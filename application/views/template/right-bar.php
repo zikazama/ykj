@@ -14,7 +14,7 @@
 				<li><a href="<?= base_url('setting') ?>"><img src="<?= base_url() ?>assets/images/icons/gray/settings.png" alt="" title="" /><span>Pengaturan Akun</span></a></li>
 				<li><a href="<?= base_url('setting/password') ?>"><img src="<?= base_url() ?>assets/images/icons/gray/lock.png" alt="" title="" /><span>Pengaturan Password</span></a></li>
 				<li><a href="<?= base_url('profile') ?>"><img src="<?= base_url() ?>assets/images/icons/gray/briefcase.png" alt="" title="" /><span>Profile</span></a></li>
-				<li><a href="features.html"><img src="<?= base_url() ?>assets/images/icons/gray/message.png" alt="" title="" /><span>Pemberitahuan</span><strong>12</strong></a></li>
+				<li><a href="<?= base_url('pemberitahuan') ?>"><img src="<?= base_url() ?>assets/images/icons/gray/message.png" alt="" title="" /><span>Pemberitahuan</span></a></li>
 				<li><a href="<?= base_url('favorite') ?>"><img src="<?= base_url() ?>assets/images/icons/gray/love.png" alt="" title="" /><span>Favorite Ku</span></a></li>
 				<li><a href="<?= base_url('login/aksi_logout') ?>"><img src="<?= base_url() ?>assets/images/icons/gray/lock.png" alt="" title="" /><span>Logout</span></a></li>
 			</ul>

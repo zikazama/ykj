@@ -15,7 +15,13 @@
         function showPosition(position) {
             latitude = position.coords.latitude;
             longitude = position.coords.longitude;
-            window.location.href = "<?= base_url() ?>jajan/index/"+latitude+'/'+longitude+'/';
+            // var url = "<?= base_url() ?>jajan/index/" + latitude + '/' + longitude + '/';
+            // var form = $('<form action="' + url + '" method="post">' +
+            //     '<input type="text" name="kode" value="ayokitajajan" />' +
+            //     '</form>');
+            // $('body').append(form);
+            // form.submit();
+            window.location.href = "<?= base_url() ?>jajan/index/" + latitude + '/' + longitude + '/';
         }
 
         getLocation();
