@@ -108,10 +108,10 @@ class Jajan extends CI_Controller
 				'id_user' => $id_user
 			));
 			$this->session->set_flashdata('pesan_sukses', 'Jajanan Berhasil Diposting anda mendapat 2 point');
-			redirect(base_url('jajan'));
+			redirect(base_url('jajan/direct'));
 		} else {
 			$this->session->set_flashdata('pesan_gagal', 'Gagal Diposting');
-			redirect(base_url('jajan'));
+			redirect(base_url('jajan/direct'));
 		}
 	}
 

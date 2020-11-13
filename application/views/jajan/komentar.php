@@ -40,9 +40,9 @@
                             </div>
                             
                             <iframe width="100%" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDLPKsfATfhZXgndiwLwxDsBy3V84R19tI
-    &q=<?= $this->uri->segment(3) ?>,<?= $this->uri->segment(4) ?>" allowfullscreen>
+    &q=<?= $postingan['latitude'] ?>,<?= $postingan['longitude'] ?>" allowfullscreen>
                             </iframe>
-                            <a href="https://maps.google.com/?q=<?= $this->uri->segment(3) ?>,<?= $this->uri->segment(4) ?>" class="btn btn--full open-popup">Tunjukan Tempat Di Maps</a>
+                            <a href="https://maps.google.com/?q=<?= $postingan['latitude'] ?>,<?= $postingan['longitude'] ?>" class="btn btn--full open-popup">Tunjukan Tempat Di Maps</a>
                             <div class="tabs">
 
                                 <input type="radio" name="tabs" class="tabradio" id="tabtwo" checked="checked">

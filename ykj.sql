@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Nov 2020 pada 18.13
+-- Waktu pembuatan: 13 Nov 2020 pada 06.49
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -33,6 +33,19 @@ CREATE TABLE `chat` (
   `id_pengirim` int(11) NOT NULL,
   `id_penerima` int(11) NOT NULL,
   `isi_pesan` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `favorit`
+--
+
+CREATE TABLE `favorit` (
+  `id_favorit` int(11) NOT NULL,
+  `id_post` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -95,6 +108,7 @@ CREATE TABLE `notifikasi` (
   `id_post` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `isi_notifikasi` text NOT NULL,
+  `is_read` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -120,7 +134,8 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id_post`, `id_user`, `foto`, `judul`, `caption`, `latitude`, `longitude`, `created_at`) VALUES
-(1, 1, 'e25484be7010cf6cc3676b9b97340ffc.png', 'stiker', 'jajan stiker', -1.8247355, 109.96970030000001, '2020-11-12 10:54:42');
+(1, 1, 'e25484be7010cf6cc3676b9b97340ffc.png', 'stiker', 'jajan stiker', -1.8247355, 109.96970030000001, '2020-11-12 10:54:42'),
+(2, 1, 'ff3c3713f9f0afc212264db9a04bd875.jpg', 'Line', 'LHD', -1.8248509999999998, 109.9696867, '2020-11-13 01:50:21');
 
 -- --------------------------------------------------------
 
@@ -137,6 +152,7 @@ CREATE TABLE `user` (
   `whatsapp` varchar(20) NOT NULL,
   `point` int(11) NOT NULL,
   `foto` varchar(50) NOT NULL,
+  `recovery` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -144,8 +160,8 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `tentang`, `whatsapp`, `point`, `foto`, `created_at`) VALUES
-(1, 'Fauzi', 'fauzi190198@gmail.com', '010101', 'Founder of Yuk Kita Jajan', '2147483647', 2, '119ffbb19daef8bfe9c2e8aaac8e6e00.jpg', '2020-11-12 10:54:42');
+INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `tentang`, `whatsapp`, `point`, `foto`, `recovery`, `created_at`) VALUES
+(1, 'Fauzi', 'fauzi190198@gmail.com', '010101', 'Founder of Yuk Kita Jajan', '2147483647', 4, '119ffbb19daef8bfe9c2e8aaac8e6e00.jpg', '', '2020-11-13 01:50:23');
 
 --
 -- Indexes for dumped tables
@@ -156,6 +172,12 @@ INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `tentang`, `whatsapp
 --
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`id_chat`);
+
+--
+-- Indeks untuk tabel `favorit`
+--
+ALTER TABLE `favorit`
+  ADD PRIMARY KEY (`id_favorit`);
 
 --
 -- Indeks untuk tabel `komentar`
@@ -198,6 +220,12 @@ ALTER TABLE `chat`
   MODIFY `id_chat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `favorit`
+--
+ALTER TABLE `favorit`
+  MODIFY `id_favorit` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
@@ -219,7 +247,7 @@ ALTER TABLE `notifikasi`
 -- AUTO_INCREMENT untuk tabel `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
