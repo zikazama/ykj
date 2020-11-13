@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Nov 2020 pada 06.49
+-- Waktu pembuatan: 13 Nov 2020 pada 16.14
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -49,6 +49,13 @@ CREATE TABLE `favorit` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `favorit`
+--
+
+INSERT INTO `favorit` (`id_favorit`, `id_post`, `id_user`, `created_at`) VALUES
+(3, 2, 1, '2020-11-13 11:57:49');
+
 -- --------------------------------------------------------
 
 --
@@ -68,7 +75,25 @@ CREATE TABLE `komentar` (
 --
 
 INSERT INTO `komentar` (`id_komentar`, `id_post`, `id_user`, `isi_komentar`, `created_at`) VALUES
-(1, 1, 1, 'bagus banget', '2020-11-12 16:26:46');
+(1, 1, 1, 'bagus banget', '2020-11-12 16:26:46'),
+(2, 2, 1, 'good', '2020-11-13 11:18:44'),
+(3, 2, 1, 'test', '2020-11-13 11:55:50'),
+(4, 2, 1, 'oke', '2020-11-13 11:56:24'),
+(5, 2, 1, 'oke', '2020-11-13 11:58:04');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `laporkan`
+--
+
+CREATE TABLE `laporkan` (
+  `id_laporkan` int(11) NOT NULL,
+  `id_user_melapor` int(11) NOT NULL,
+  `id_post` int(11) NOT NULL,
+  `alasan` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -112,6 +137,13 @@ CREATE TABLE `notifikasi` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `notifikasi`
+--
+
+INSERT INTO `notifikasi` (`id_notifikasi`, `id_post`, `id_user`, `isi_notifikasi`, `is_read`, `created_at`) VALUES
+(1, 2, 1, 'Mengomentari postingan mu', 0, '2020-11-13 11:45:10');
+
 -- --------------------------------------------------------
 
 --
@@ -152,6 +184,7 @@ CREATE TABLE `user` (
   `whatsapp` varchar(20) NOT NULL,
   `point` int(11) NOT NULL,
   `foto` varchar(50) NOT NULL,
+  `status` enum('aktif','blokir') NOT NULL DEFAULT 'aktif',
   `recovery` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -160,8 +193,8 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `tentang`, `whatsapp`, `point`, `foto`, `recovery`, `created_at`) VALUES
-(1, 'Fauzi', 'fauzi190198@gmail.com', '010101', 'Founder of Yuk Kita Jajan', '2147483647', 4, '119ffbb19daef8bfe9c2e8aaac8e6e00.jpg', '', '2020-11-13 01:50:23');
+INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `tentang`, `whatsapp`, `point`, `foto`, `status`, `recovery`, `created_at`) VALUES
+(1, 'Fauzi', 'fauzi190198@gmail.com', '010101', 'Founder of Yuk Kita Jajan', '2147483647', 4, '119ffbb19daef8bfe9c2e8aaac8e6e00.jpg', 'aktif', 'MPwguA1krFzGf5iDcQSt', '2020-11-13 09:38:35');
 
 --
 -- Indexes for dumped tables
@@ -184,6 +217,12 @@ ALTER TABLE `favorit`
 --
 ALTER TABLE `komentar`
   ADD PRIMARY KEY (`id_komentar`);
+
+--
+-- Indeks untuk tabel `laporkan`
+--
+ALTER TABLE `laporkan`
+  ADD PRIMARY KEY (`id_laporkan`);
 
 --
 -- Indeks untuk tabel `level`
@@ -223,13 +262,19 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT untuk tabel `favorit`
 --
 ALTER TABLE `favorit`
-  MODIFY `id_favorit` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_favorit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `laporkan`
+--
+ALTER TABLE `laporkan`
+  MODIFY `id_laporkan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `level`
@@ -241,7 +286,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  MODIFY `id_notifikasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_notifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `post`

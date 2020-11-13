@@ -14,17 +14,17 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/simplelightbox.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
-   
+
 </head>
 
 <body id="mobile_wrap">
 
-   
+
 
     <!-- Login Popup -->
-   <?php if(isset($konten)){
-       $this->load->view($konten);
-   } ?>
+    <?php if (isset($konten)) {
+        $this->load->view($konten);
+    } ?>
 
     <!-- Register Popup -->
     <div class="popup popup-signup">
@@ -70,9 +70,9 @@
             <h4>Bagikan</h4>
             <p>Dukung UMKM kita dengan cara membagikan YUKIJA kepada teman-teman.</p>
             <ul class="social_share">
-                <li><a href="http://twitter.com/"><img src="<?= base_url() ?>assets/images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span></a></li>
-                <li><a href="http://www.facebook.com/"><img src="<?= base_url() ?>assets/images/icons/black/facebook.png" alt="" title="" /><span>FACEBOOK</span></a></li>
-                <li><a href="http://plus.google.com"><img src="<?= base_url() ?>assets/images/icons/black/wa.png" alt="" title="" /><span>WHATSAPP</span></a></li>
+                <li><a href="#"><img src="<?= base_url() ?>assets/images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span></a></li>
+                <li><a href="#"><img src="<?= base_url() ?>assets/images/icons/black/facebook.png" alt="" title="" /><span>FACEBOOK</span></a></li>
+                <li><a id="wa" href="#"><img src="<?= base_url() ?>assets/images/icons/black/wa.png" alt="" title="" /><span>WHATSAPP</span></a></li>
             </ul>
             <div class="close_popup_button"><a href="#" class="close-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/black/menu_close.png" alt="" title="" /></a></div>
         </div>
@@ -85,10 +85,20 @@
     <!-- <script src="<?= base_url() ?>assets/js/swiper.custom.js"></script> -->
     <script src="<?= base_url() ?>assets/js/jquery.custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
-    
-    <?php if(isset($js)) { 
+    <script>
+        $(document).ready(function() {
+            $('#wa').click(function() {
+                var imageURL = '<?= base_url() ?>';
+                var fakeLink = document.createElement('a');
+                fakeLink.setAttribute('href', 'whatsapp://send?text=' + encodeURI(imageURL));
+                fakeLink.setAttribute('data-action', 'share/whatsapp/share');
+                fakeLink.click();
+            });
+        });
+    </script>
+    <?php if (isset($js)) {
         $this->load->view($js);
-     } ?>
+    } ?>
 </body>
 
 </html>
