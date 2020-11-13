@@ -70,8 +70,8 @@
             <h4>Bagikan</h4>
             <p>Dukung UMKM kita dengan cara membagikan YUKIJA kepada teman-teman.</p>
             <ul class="social_share">
-                <li><a href="#"><img src="<?= base_url() ?>assets/images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span></a></li>
-                <li><a href="#"><img src="<?= base_url() ?>assets/images/icons/black/facebook.png" alt="" title="" /><span>FACEBOOK</span></a></li>
+                <li><a href="https://twitter.com/share?url=<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span></a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/icons/black/facebook.png" alt="" title="" /><span>FACEBOOK</span></a></li>
                 <li><a id="wa" href="#"><img src="<?= base_url() ?>assets/images/icons/black/wa.png" alt="" title="" /><span>WHATSAPP</span></a></li>
             </ul>
             <div class="close_popup_button"><a href="#" class="close-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/black/menu_close.png" alt="" title="" /></a></div>
