@@ -49,7 +49,7 @@
                                             <?php } else if($data['like'] == 1) { ?>
                                                 <a href="<?= base_url('favorite/dislike/'.$data['id_post']) ?>"><img src="<?= base_url() ?>assets/images/icons/white/dislike.png" alt="" title="" /></a>
                                             <?php } ?>
-                                            <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="<?= base_url() ?>assets/images/icons/white/contact.png" alt="" title="" /></a>
+                                            <a href="<?= base_url('laporkan/index/'.$data['id_post']) ?>"><img src="<?= base_url() ?>assets/images/icons/white/report.png" alt="" title="" /></a>
                                         </div>
                                     </div>
                                 </li>

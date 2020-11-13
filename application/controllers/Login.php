@@ -86,6 +86,10 @@ class Login extends CI_Controller
 		// die();
 		if ($cek->num_rows() > 0) {
 			$data_login = $cek->row_array();
+			if ($data_login['status'] == 'blokir') {
+				$this->session->set_flashdata('pesan_gagal', 'Maaf Akun Anda Diblokir Karena Melanggar Ketentuan');
+				redirect(base_url('login'));
+			}
 			unset($data_login['password']);
 			$this->session->set_userdata($data_login);
 			redirect(base_url('home'));
