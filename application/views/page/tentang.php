@@ -42,7 +42,12 @@
                         <div class="page_single layout_fullwidth_padding">
 
                             <blockquote>
-                                This mobile template that can be used to create a mobile website, a mobile web app, or even a native mobile app. The design is using a full width layout that works perfectly on tablets and desktop also. <span>SINDEVO.COM</span>
+                               <h3 style="text-align: center;"><strong>Apa itu YUKIJA ?</strong></h3>YUKIJA yaitu singkatan dari Yuk Kita Jajan adalah sebuah platform digital yang bertujuan sebagai media membagikan jajanan. Platform ini bisa digunakan untuk semua orang. Selain bisa berbagi foto jajanan, platform ini menantang para pecinta jajanan atau food blogger/vlogger untuk membagikan jajanan nya kepada orang-orang. Para user akan diberikan ranking sesuai dengan point yang mereka peroleh. Mereka bisa mendapatkan point dengan cara mengupload jajanan mereka sesering mungkin.&nbsp;<p>Adapaun tujuan utama YUKIJA :</p>
+<ul>
+    <li>Sebagai media sharing jajanan</li>
+    <li>Tempat menemukan jajanan terdekat karena jajanan yang muncul hanya radius &lt;= 10 KM</li>
+    <li>Membantu UMKM dalam meningkatkan penjualan di masa pandemi ini</li>
+</ul>
                             </blockquote>
 
                             

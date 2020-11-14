@@ -42,7 +42,7 @@
                         <div class="page_single layout_fullwidth_padding">
 
                             <blockquote>
-                                This mobile template that can be used to create a mobile website, a mobile web app, or even a native mobile app. The design is using a full width layout that works perfectly on tablets and desktop also. <span>SINDEVO.COM</span>
+                                <h3 style="text-align: center;"><strong>Bagaimana kita dan YUKIJA mendukung UMKM ?</strong></h3>Seperti tujuan YUKIJA yaitu membantu UMKM. Kita bisa membantu UMKM dengan cara memposting jajanan kita ditempat kita membeli jajanan, dengan itu lokasi si penjual akan ikut tersimpan di dalam sistem sehingga ketika user lain ingin membeli jajanan mereka dapat menemukannya.<p>Semakin banyak jajanan yang kita posting semakin banyak pula UMKM akan terbantu. Ayo kita bantu UMKM kita !</p>
                             </blockquote>
 
                             
