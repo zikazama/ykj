@@ -6,10 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="dicoding:email" content="fauzi190198@gmail.com">
+    <meta name="dicoding:email" content="fauzi190198@gmail.com">
     <link rel="apple-touch-icon" href="<?= base_url() ?>assets/icon.png" />
     <link rel="apple-touch-startup-image" href="<?= base_url() ?>icon.png">
+    <!-- HTML Meta Tags -->
     <title>YUKIJA</title>
+    <meta name="description" content="YUKIJA adalah platform jajan digital untuk mencari jajanan dan membantu UMKM">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="YUKIJA">
+    <meta itemprop="description" content="YUKIJA adalah platform jajan digital untuk mencari jajanan dan membantu UMKM">
+    <meta itemprop="image" content="https://yukija.tech/assets/poster.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://yukija.tech">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YUKIJA">
+    <meta property="og:description" content="YUKIJA adalah platform jajan digital untuk mencari jajanan dan membantu UMKM">
+    <meta property="og:image" content="https://yukija.tech/assets/poster.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YUKIJA">
+    <meta name="twitter:description" content="YUKIJA adalah platform jajan digital untuk mencari jajanan dan membantu UMKM">
+    <meta name="twitter:image" content="https://yukija.tech/assets/poster.png">
+
+    <!-- Meta Tags Generated via http://heymeta.com -->
     <link rel="shortcut icon" href="<?= base_url() ?>assets/icon.png">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/swiper.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/simplelightbox.css">
