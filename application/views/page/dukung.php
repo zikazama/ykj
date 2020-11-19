@@ -24,14 +24,11 @@
                             <div class="swiper-wrapper">
 
                                 <div class="swiper-slide">
-                                    <img src="<?= base_url() ?>assets/images/page_photo.jpg" alt="" title="" />
+                                    <img src="<?= base_url() ?>assets/poster.png" alt="" title="" />
                                 </div>
-                                <div class="swiper-slide">
+                                <!-- <div class="swiper-slide">
                                     <img src="<?= base_url() ?>assets/images/page_photo2.jpg" alt="" title="" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="<?= base_url() ?>assets/images/page_photo3.jpg" alt="" title="" />
-                                </div>
+                                </div> -->
 
                             </div>
                             <div class="swiper-pagination"></div>
